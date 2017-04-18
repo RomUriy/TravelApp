@@ -1,0 +1,38 @@
+<div class="modal">
+
+      <ion-header-bar class="bar-secondary">
+        <h1 class="title" ng-show="currentTaskId == -1">Новая задача</h1>
+        <h1 class="title" ng-show="currentTaskId > -1">Ред-ть задачу</h1>
+	<button class="button button-clear button-positive" ng-click="closeTask()">Отмена</button>
+      </ion-header-bar>
+
+      <ion-content>
+	<form ng-submit="submitTask(activeTask)">
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="Что запланировать?" ng-model="activeTask.title" />
+			</label>
+			<label class="item item-input">
+				<textarea placeholder="Описание" ng-model="activeTask.description"></textarea>
+			</label>
+			<ul class="list">
+				<li class="item item-toggle">
+					<span class="toggle-item">Выполнено</span>
+					<label class="toggle toggle-positive">
+						<input type="checkbox" ng-model="activeTask.done" />
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+				</li>
+			</ul>
+			<div class="padding">
+				<button type="submit" class="button button-block button-positive" ng-show="currentTaskId == -1">Добавить</button>
+				<button type="submit" class="button button-block button-positive" ng-show="currentTaskId > -1">Сохранить</button>
+			</div>
+		</div>
+	</form>
+	
+      </ion-content>
+
+</div>
