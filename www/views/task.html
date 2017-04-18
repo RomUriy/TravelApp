@@ -18,7 +18,9 @@
 			</label>
 
             <label class="item item-input">
+                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
                 <input type="datetime-local" placeholder="Время" ng-model="activeTask.time">
+                </ion-datetime>
             </label>
 
 			<label class="item item-input">
