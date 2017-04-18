@@ -38,6 +38,7 @@ angular.module('ToDo', ['ionic'])
 	$scope.addNewTask = function() {
 		$scope.activeTask = {
 			title: '',
+			amount: '',
 			description: '',
 			time: '',
 			done: false
@@ -54,6 +55,7 @@ angular.module('ToDo', ['ionic'])
 		var task = $scope.tasks[id];
 		$scope.activeTask = {
 			title: task.title,
+			amount: task.amount,
 			description: task.description,
 			time: task.time,
 			done: task.done
@@ -71,6 +73,7 @@ angular.module('ToDo', ['ionic'])
 		if( $scope.currentTaskId == -1 ){
 			$scope.tasks.push({
 				title: task.title,
+				amount: task.amount,
 				description: task.description,
 				time: task.time,
 				done: task.done
@@ -78,6 +81,7 @@ angular.module('ToDo', ['ionic'])
 		} else {
 			var id = $scope.currentTaskId;
 			$scope.tasks[id].title = task.title;
+			$scope.tasks[id].amount = task.amount;
 			$scope.tasks[id].description = task.description;
 			$scope.tasks[id].time = task.time;
 			$scope.tasks[id].done = task.done;

@@ -6,8 +6,8 @@
 
     <splash src="img/logo.gif" />
 
-    <name>Todolist v.1</name>
-    <description>Todolist v.1</description>
+    <name>YourBacket v.1.1</name>
+    <description>YourBacket v.1.1</description>
     <author href="http://cemoe.com" email="romuriy@gmail.com">
 		Roman Yurkevych	</author>
 	<platform name="android" />

@@ -2,7 +2,7 @@
 
       <ion-header-bar class="bar-secondary">
         <h1 class="title" ng-show="currentTaskId == -1">Новая задача</h1>
-        <h1 class="title" ng-show="currentTaskId > -1">Ред-ть задачу</h1>
+        <h1 class="title" ng-show="currentTaskId > -1">Редактировать задачу</h1>
 	<button class="button button-clear button-positive" ng-click="closeTask()">Отмена</button>
       </ion-header-bar>
 
@@ -10,15 +10,15 @@
 	<form ng-submit="submitTask(activeTask)">
 		<div class="list">
 			<label class="item item-input">
-				<input type="text" placeholder="Что запланировать?" ng-model="activeTask.title" />
+				<input type="text" placeholder="Что купить?" ng-model="activeTask.title" />
+			</label>
+
+            <label class="item item-input">
+				<input type="text" placeholder="Количество шт/кг" ng-model="activeTask.amount" />
 			</label>
 
 			<label class="item item-input">
 				<textarea placeholder="Описание" ng-model="activeTask.description"></textarea>
-			</label>
-
-			<label class="item item-input">
-				<textarea placeholder="Время" ng-model="activeTask.time"></textarea>
 			</label>
 
 			<ul class="list">

@@ -3,9 +3,9 @@
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <splash src="img/icon/bc.png" />
-    <name>Todolist v.1</name>
-    <description>Todolist v.1</description>
+    <splash src="img/logo.gif" />
+    <name>YourBacket v.1.1</name>
+    <description>YourBacket v.1.1</description>
     <author email="romuriy@gmail.com" href="http://cemoe.com">
 		Roman Yurkevych	</author>
 </widget>
