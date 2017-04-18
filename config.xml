@@ -4,7 +4,7 @@
 		id          = "myfirstapp"
         version     = "1.0.0" >
 
-    <splash src="img/icon/bc.png" />
+    <splash src="img/logo.gif" />
 
     <name>Todolist v.1</name>
     <description>Todolist v.1</description>
