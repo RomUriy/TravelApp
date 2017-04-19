@@ -26,6 +26,85 @@ angular.module('ToDo', ['ionic'])
 		];
 	}
 
+
+
+
+
+$ionicModal.fromTemplateUrl('views/login.html', function(login){
+		$scope.tasklogin = login;
+	},{
+		scope: $scope,
+		animation: 'slide-in-left'
+	});
+
+	$scope.currentTaskId = -1;
+
+	$scope.login = function() {
+		$scope.activeTask = {
+			login: '',
+			password: ''
+		}
+		$scope.tasklogin.show();
+		$scope.currentTaskId = -1;
+	}
+
+	$scope.closelogin = function() {
+		$scope.tasklogin.hide();
+	}
+
+
+
+
+	$ionicModal.fromTemplateUrl('views/NewAccount.html', function(NewAccount){
+		$scope.taskNewAccount = NewAccount;
+	},{
+		scope: $scope,
+		animation: 'slide-in-left'
+	});
+
+	$scope.currentTaskId = -1;
+
+	$scope.NewAccount = function() {
+		$scope.activeTask = {
+			name: '',
+			surname: '',
+			email: '',
+			password: ''
+		}
+		$scope.taskNewAccount.show();
+		$scope.currentTaskId = -1;
+	}
+
+	$scope.closeNewAccount = function() {
+		$scope.taskNewAccount.hide();
+	}
+
+
+
+
+	$ionicModal.fromTemplateUrl('views/ForgotPassword.html', function(ForgotPassword){
+		$scope.taskForgotPassword = ForgotPassword;
+	},{
+		scope: $scope,
+		animation: 'slide-in-left'
+	});
+
+	$scope.currentTaskId = -1;
+
+	$scope.ForgotPassword = function() {
+		$scope.activeTask = {
+			email: ''
+		}
+		$scope.taskForgotPassword.show();
+		$scope.currentTaskId = -1;
+	}
+
+	$scope.closeForgotPassword = function() {
+		$scope.taskForgotPassword.hide();
+	}
+
+
+
 	$ionicModal.fromTemplateUrl('views/task.html', function(modal){
 		$scope.taskModal = modal;
 	},{

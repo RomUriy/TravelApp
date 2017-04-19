@@ -1,0 +1,29 @@
+<div class="modal">
+
+      <ion-header-bar class="bar-secondary">
+        <h1 class="title" ng-show="currentTaskId == -1">Login form</h1>
+	<button class="button button-clear button-positive" ng-click="closelogin()">Back</button>
+      </ion-header-bar>
+
+      <ion-content>
+<ion-list>
+
+  <ion-item>
+    <ion-label stacked><input type="text" placeholder="Email" ng-model="activeTask.email" /></ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked><input type="password" placeholder="Password" ng-model="activeTask.password" /></ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <div class="padding">
+<button type="submit" class="button button-block button-positive" ng-click="LoginDone()">Sign in</button>
+<button type="submit" class="button button-block button-positive" color="secondary" ng-click="NewAccount()">Sign up</button>
+<center><button type="submit" class="button button-clear button-positive "  ng-click="ForgotPassword()">Forgot password ?</button></center>
+</div>
+</ion-list>
+      </ion-content>
+
+</div>
