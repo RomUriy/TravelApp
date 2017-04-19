@@ -36,7 +36,7 @@
 				<input type="checkbox" ng-model="task.done" ng-click="saveTasks()" />
 			</label>
 			<span class="title" ng-click="openTask($index)">{{ task.title }} {{ task.amount }}</span>
-			<i class="icon ion-close-circled deleteItem" ng-click="deleteTask($index)"></i>
+			<i class="icon ion-close deleteItem" ng-click="deleteTask($index)"></i>
 		</ion-item>
 	</ion-list>
       </ion-content>
