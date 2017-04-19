@@ -30,8 +30,8 @@ angular.module('ToDo', ['ionic'])
 
 
 
-$ionicModal.fromTemplateUrl('views/login.html', function(login){
-		$scope.tasklogin = login;
+$ionicModal.fromTemplateUrl('views/Login.html', function(Login){
+		$scope.taskLogin = Login;
 	},{
 		scope: $scope,
 		animation: 'slide-in-left'
@@ -39,17 +39,17 @@ $ionicModal.fromTemplateUrl('views/login.html', function(login){
 
 	$scope.currentTaskId = -1;
 
-	$scope.login = function() {
+	$scope.Login = function() {
 		$scope.activeTask = {
 			login: '',
 			password: ''
 		}
-		$scope.tasklogin.show();
+		$scope.taskLogin.show();
 		$scope.currentTaskId = -1;
 	}
 
-	$scope.closelogin = function() {
-		$scope.tasklogin.hide();
+	$scope.closeLogin = function() {
+		$scope.taskLogin.hide();
 	}
 
 

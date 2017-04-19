@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="myfirstapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="YourDream" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
     <splash src="img/logo.gif" />
-    <name>YourBacket v.1.1</name>
-    <description>YourBacket v.1.1</description>
+    <name>YourDream</name>
+    <description>YourDream</description>
     <author email="romuriy@gmail.com" href="http://cemoe.com">
-		Roman Yurkevych	</author>
+		Roman Yurkevych, Ihor Lobanov</author>
 </widget>

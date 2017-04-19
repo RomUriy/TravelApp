@@ -1,35 +1,35 @@
 <div class="modal">
 
       <ion-header-bar class="bar-secondary">
-        <h1 class="title" ng-show="currentTaskId == -1">Новая задача</h1>
-        <h1 class="title" ng-show="currentTaskId > -1">Редактировать задачу</h1>
-	<button class="button button-clear button-positive" ng-click="closeTask()">Отмена</button>
+        <h1 class="title" ng-show="currentTaskId == -1">New Dream</h1>
+        <h1 class="title" ng-show="currentTaskId > -1">Edit</h1>
+	<button class="button button-clear button-positive" ng-click="closeTask()">Back</button>
       </ion-header-bar>
 
       <ion-content>
 	<form ng-submit="submitTask(activeTask)">
 		<div class="list">
 			<label class="item item-input">
-				<input type="text" placeholder="Что купить?" ng-model="activeTask.title" />
+				<input type="text" placeholder="What does plan ?" ng-model="activeTask.title" />
 			</label>
 
             <label class="item item-input">
-				<input type="text" placeholder="Количество шт/кг" ng-model="activeTask.amount" />
+				<input type="text" placeholder="Why no?" ng-model="activeTask.amount" />
 			</label>
 
             <label class="item item-input">
                 <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-                <input type="datetime-local" placeholder="Время" ng-model="activeTask.time">
+                <input type="datetime-local" placeholder="Time" ng-model="activeTask.time">
                 </ion-datetime>
             </label>
 
 			<label class="item item-input">
-				<textarea placeholder="Описание" ng-model="activeTask.description"></textarea>
+				<textarea placeholder="Description" ng-model="activeTask.description"></textarea>
 			</label>
 
 			<ul class="list">
 				<li class="item item-toggle">
-					<span class="toggle-item">Выполнено</span>
+					<span class="toggle-item">Done</span>
 					<label class="toggle toggle-positive">
 						<input type="checkbox" ng-model="activeTask.done" />
 						<div class="track">
@@ -39,8 +39,8 @@
 				</li>
 			</ul>
 			<div class="padding">
-				<button type="submit" class="button button-block button-positive" ng-show="currentTaskId == -1">Добавить</button>
-				<button type="submit" class="button button-block button-positive" ng-show="currentTaskId > -1">Сохранить</button>
+				<button type="submit" class="button button-block button-positive" ng-show="currentTaskId == -1">Add new</button>
+				<button type="submit" class="button button-block button-positive" ng-show="currentTaskId > -1">Save</button>
 			</div>
 		</div>
 	</form>

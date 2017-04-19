@@ -26,7 +26,7 @@
     <ion-pane>
       <ion-header-bar class="bar-positive">
       <button class="button icon ion-person" ng-click="login()"></button>
-        <h1 class="title">YourBacket v.1.1 Yurkevych</h1>
+        <h1 class="title">YourDream v.1.2 </h1>
 	<button class="button icon ion-plus" ng-click="addNewTask()"></button>
       </ion-header-bar>
 
@@ -36,7 +36,7 @@
 			<label class="checkbox">
 				<input type="checkbox" ng-model="task.done" ng-click="saveTasks()" />
 			</label>
-			<span class="title" ng-click="openTask($index)">{{ task.title }} {{ task.amount }}</span>
+			<span class="title" ng-click="openTask($index)">{{ task.title }}</span>
 			<i class="icon ion-close deleteItem" ng-click="deleteTask($index)"></i>
 		</ion-item>
 	</ion-list>
