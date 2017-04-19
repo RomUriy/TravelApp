@@ -34,7 +34,7 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 		$scope.taskLogin = Login;
 	},{
 		scope: $scope,
-		animation: 'slide-in-left'
+		animation: 'slide-in-right'
 	});
 
 	$scope.currentTaskId = -1;
