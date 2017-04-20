@@ -24,6 +24,12 @@
         },
         "cordova-plugin-media": {
             "PACKAGE_NAME": "myfirstapp"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "YourDream"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "YourDream"
         }
     },
     "dependent_plugins": {
