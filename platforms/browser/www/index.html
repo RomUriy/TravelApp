@@ -20,6 +20,7 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+
   </head>
   <body ng-app="ToDo" ng-controller="ToDoCtrl">
 
@@ -43,8 +44,9 @@
       </ion-content>
 
        <ion-footer-bar class="bar-secondary">
-  <button class="button icon ion-map" ng-click="WindowMap();"></button>     
-  <button class="button icon ion-camera" onclick="navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);"></button>
+  <div align="left"><button class="button icon ion-map" ng-click="WindowMap();"></button></div>
+  <div align="center"><button class="button icon ion-share" ng-click="WindowMap();"></button></div>
+  <div align="right"><button class="button icon ion-camera" onclick="navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);"></button></div>
       </ion-footer-bar>
 
     </ion-pane>
