@@ -54,7 +54,7 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 		$scope.taskLogin = Login;
 	},{
 		scope: $scope,
-		animation: 'fade-in'
+		animation: 'slide-in-left'
 	});
 
 	$scope.currentTaskId = -1;
@@ -142,6 +142,7 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 			amount: '',
 			description: '',
 			time: '',
+			file: '',
 			done: false
 		}
 		$scope.taskModal.show();
@@ -159,6 +160,7 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 			amount: task.amount,
 			description: task.description,
 			time: task.time,
+			file: task.file,
 			done: task.done
 		}
 		$scope.currentTaskId = id;
@@ -177,6 +179,7 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 				amount: task.amount,
 				description: task.description,
 				time: task.time,
+				file: task.file,
 				done: task.done
 			});
 		} else {
@@ -185,6 +188,7 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 			$scope.tasks[id].amount = task.amount;
 			$scope.tasks[id].description = task.description;
 			$scope.tasks[id].time = task.time;
+			$scope.tasks[id].file = task.file;
 			$scope.tasks[id].done = task.done;
 		}
 

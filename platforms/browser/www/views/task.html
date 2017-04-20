@@ -2,7 +2,7 @@
 
       <ion-header-bar class="bar-secondary">
         <h1 class="title" ng-show="currentTaskId == -1">New Dream</h1>
-        <h1 class="title" ng-show="currentTaskId > -1">Edit</h1>
+        <h1 class="title" ng-show="currentTaskId > -1">Edit Dream</h1>
 	<button class="button button-clear button-positive" ng-click="closeTask()">Back</button>
       </ion-header-bar>
 
@@ -19,12 +19,16 @@
 
             <label class="item item-input">
                 <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-                <input type="datetime-local" placeholder="Time" ng-model="activeTask.time">
+                <input type="datetime-local" name="Time" placeholder="Time" ng-model="activeTask.time">
                 </ion-datetime>
             </label>
 
 			<label class="item item-input">
 				<textarea placeholder="Description" ng-model="activeTask.description"></textarea>
+			</label>
+
+            <label class="item item-input">
+				<input type="file" name="photo" multiple accept="image/*,image/jpeg" ng-model="activeTask.file" />
 			</label>
 
 			<ul class="list">
