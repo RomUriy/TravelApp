@@ -27,6 +27,26 @@ angular.module('ToDo', ['ionic'])
 	}
 
 
+$ionicModal.fromTemplateUrl('views/WindowMap.html', function(WindowMap){
+		$scope.taskWindowMap = WindowMap;
+	},{
+		scope: $scope,
+		animation: 'slide-in-up'
+	});
+
+	$scope.currentTaskId = -1;
+
+	$scope.WindowMap = function() {
+		$scope.activeTask = {
+			email: ''
+		}
+		$scope.taskWindowMap.show();
+		$scope.currentTaskId = -1;
+	}
+
+	$scope.closeWindowMap = function() {
+		$scope.taskWindowMap.hide();
+	}
 
 
 
@@ -102,6 +122,8 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 	$scope.closeForgotPassword = function() {
 		$scope.taskForgotPassword.hide();
 	}
+
+
 
 
 
@@ -181,12 +203,6 @@ $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
 		window.localStorage['tasks'] = angular.toJson( $scope.tasks );
 	}
 })
-
-
-
-
-
-
 
 
 
