@@ -1,0 +1,26 @@
+<div class="modal">
+
+
+
+  <ion-header-bar class="bar-positive">
+    <button class="button icon ion-person" ng-click="Login()"></button>
+    <h1 class="title">YourDream Camera</h1>
+  </ion-header-bar>
+  <ion-content>
+    <center>
+      <br>
+      <br>
+      <button class="button_camera" onclick="capturePhoto();" ion-button full>Capture Photo</button> <br> <br>
+      <button class="button_camera" onclick="capturePhotoEdit();">Capture Editable Photo</button> <br> <br>
+      <button class="button_camera" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br> <br>
+      <button class="button_camera" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br> <br>
+      <img style="display:none;width:160px;height:160px;" id="smallImage" src="" />
+      <img style="display:none;width:160px;height:160px;" id="largeImage" src="" />
+    </center>
+  </ion-content >
+  <ion-footer-bar class="bar-secondary">
+    <button class="button icon ion-ios7-bookmarks" ng-click="closeWindowCamera()"></button>
+    <!-- <button class="button icon ion-camera" onclick="navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);"></button> -->
+  </ion-footer-bar>
+
+</div>
