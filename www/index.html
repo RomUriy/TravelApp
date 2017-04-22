@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/camera.css" rel="stylesheet">
+  <link href="css/map.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+-->
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
+<!-- ionic/angularjs js -->
+<script src="lib/ionic/js/ionic.bundle.js"></script>
 
-  </head>
-  <body ng-app="ToDo" ng-controller="ToDoCtrl">
+<!-- cordova script (this will be a 404 during development) -->
+<script src="cordova.js"></script>
 
-    <ion-pane>
-      <ion-header-bar class="bar-positive">
+<!-- your app's js -->
+<script src="js/app.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/map.js"></script>
+
+
+
+</head>
+<body ng-app="ToDo" ng-controller="ToDoCtrl">
+
+  <ion-nav-view></ion-nav-view>
+
+  <ion-pane>
+
+
+
+    <ion-header-bar class="bar-positive">
       <button class="button icon ion-person" ng-click="Login()"></button>
-        <h1 class="title">YourDream</h1>
-	<button class="button icon ion-plus" ng-click="addNewTask()"></button>
-      </ion-header-bar>
+      <h1 class="title">YourDream v.1.2 </h1>
+      <button class="button icon ion-plus" ng-click="addNewTask()"></button>
+    </ion-header-bar>
 
-      <ion-content>
-	<ion-list>
-		<ion-item ng-repeat="task in tasks" class="item item-checkbox item-icon-right animated" ng-class="{'checked' : task.done}">
-			<label class="checkbox">
-				<input type="checkbox" ng-model="task.done" ng-click="saveTasks()" />
-			</label>
-			<span class="title" ng-click="openTask($index)">{{ task.title }}</span>
-			<i class="icon ion-close deleteItem" ng-click="deleteTask($index)"></i>
-		</ion-item>
-	</ion-list>
-      </ion-content>
+    <ion-content>
+      <ion-list>
+        <ion-item ng-repeat="task in tasks" class="item item-checkbox item-icon-right animated" ng-class="{'checked' : task.done}">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="task.done" ng-click="saveTasks()" />
+          </label>
+          <span class="title" ng-click="openTask($index)">{{ task.title }}</span>
+          <i class="icon ion-close deleteItem" ng-click="deleteTask($index)"></i>
+        </ion-item>
+      </ion-list>
+    </ion-content>
 
-       <ion-footer-bar class="bar-secondary">
+    <ion-footer-bar class="bar-secondary">
+
+      <a nav-transition="android" href="views/WindowMap.html">
         <button class="button icon ion-map" ng-click="WindowMap();"></button>
-        <button class="button icon ion-camera" onclick="navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);"></button>
-      </ion-footer-bar>
+      </a>
 
-    </ion-pane>
+      <button class="button icon ion-camera pull-right" ng-click="WindowCamera();"></button>
+    </ion-footer-bar>
 
-  </body>
+  </ion-pane>
+
+
+
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

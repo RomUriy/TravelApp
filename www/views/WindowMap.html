@@ -1,17 +1,56 @@
-<div class="modal">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="../css/map.css" rel="stylesheet">
+  <script src="../lib/ionic/js/ionic.bundle.js"></script>
+  <script src="cordova.js"></script>
+  <script src="../js/map.js"></script>
+</head>
+<body ng-app="starter">
+  <ion-pane>
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">Map</h1>
+    </ion-header-bar>
+    <ion-content ng-controller="MapController">
+      <div id="map" data-tap-disabled="true"></div>
+    </ion-content>
 
-      <ion-header-bar class="bar-positive">
-      <button class="button icon ion-person" ng-click="Login()"></button>
-        <h1 class="title">YourDream Map</h1>
-      </ion-header-bar>
-      <ion-content>
-          <center>
-           MAP
-          </center>
-      </ion-content>
-      <ion-footer-bar class="bar-secondary">
-      <button class="button icon ion-ios7-bookmarks" ng-click="closeWindowMap()"></button>
-  <button class="button icon ion-camera" onclick="navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);"></button>
-      </ion-footer-bar>
 
-</div>
+    <ion-footer-bar class="bar-positive">
+      <a href="../index.html">
+        <button class="button icon ion-ios7-bookmarks" ng-click="closeWindowCamera()"></button>
+      </a>
+    </ion-footer-bar>
+  </ion-pane>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpV4NjVbB5KX4pCdWrFgphqBeOFKTbAJM&callback=initMap"></script>
+</body>
+</html>
+
+
+
+
+<!-- <div class="modal">
+
+
+<ion-header-bar class="bar-positive">
+<button class="button icon ion-person" ng-click="Login()"></button>
+<h1 class="title">Map</h1>
+</ion-header-bar>
+
+<ion-content >
+Map
+</ion-content>
+
+<ion-footer-bar class="bar-secondary">
+<button class="button icon ion-ios7-bookmarks" ng-click="closeWindowMap()"></button>
+<button class="button icon ion-camera" onclick="navigator.camera.getPicture(cameraSuccess, cameraError, cameraOptions);"></button>
+</ion-footer-bar>
+
+
+</div> -->
