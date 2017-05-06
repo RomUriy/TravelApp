@@ -71,6 +71,26 @@ angular.module('ToDo', ['ionic'])
   }
 
 
+  $ionicModal.fromTemplateUrl('views/WindowWeather.html', function(WindowWeather){
+    $scope.taskWindowWeather = WindowWeather;
+  },{
+    scope: $scope,
+    animation: 'slide-in-up'
+  });
+
+  $scope.currentTaskId = -1;
+
+  $scope.WindowWeather = function() {
+    $scope.activeTask = {
+      email: ''
+    }
+    $scope.taskWindowWeather.show();
+    $scope.currentTaskId = -1;
+  }
+
+  $scope.closeWindowWeather = function() {
+    $scope.taskWindowWeather.hide();
+  }
 
 
   $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
