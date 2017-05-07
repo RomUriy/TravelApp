@@ -13,6 +13,11 @@
 
 
 
+
+
+
+
+
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
   <link href="css/ionic.app.css" rel="stylesheet">
 -->
@@ -57,16 +62,20 @@
       </ion-list>
     </ion-content>
 
-    <ion-footer-bar class="bar-secondary">
-
+    <ion-footer-bar class="bar-positive">
       <a nav-transition="android" href="views/WindowMap.html">
         <button class="button icon ion-map" ng-click="WindowMap();"></button>
       </a>
 
-      <button class="button icon ion-camera pull-right" ng-click="WindowCamera();"></button>
+      <a class="weather" href="views/WindowWeather.html">
+        <button class="button icon ion-cloud" ng-click="WindowWeather();"></button>
+      </a>
+
+      <button class="button icon ion-camera" ng-click="WindowCamera();"></button>
     </ion-footer-bar>
 
   </ion-pane>
+
 
 
 
