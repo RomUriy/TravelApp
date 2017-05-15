@@ -382,7 +382,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.2",
     "cordova-plugin-media": "3.0.0",
     "cordova-plugin-camera": "2.4.0",
-    "cordova-plugin-media-capture": "1.4.2"
+    "cordova-plugin-media-capture": "1.4.2",
+    "cordova-plugin-geolocation": "2.4.3"
 }
 // BOTTOM OF METADATA
 });

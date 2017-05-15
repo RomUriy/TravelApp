@@ -1,0 +1,19 @@
+<ion-view view-title="Camera">
+
+	<ion-header-bar class="bar-positive">
+		<h1 class="title">Camera</h1>
+	</ion-header-bar>
+
+	<ion-content class="padding">
+		<center>
+			<br>
+			<br>
+			<button class="button_camera" onclick="capturePhoto();" ion-button full>Capture Photo</button> <br> <br>
+			<button class="button_camera" onclick="capturePhotoEdit();">Capture Editable Photo</button> <br> <br>
+			<button class="button_camera" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br> <br>
+			<button class="button_camera" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br> <br>
+			<img style="display:none;width:160px;height:160px;" id="smallImage" src="" />
+			<img style="display:none;width:160px;height:160px;" id="largeImage" src="" />
+		</center>
+	</ion-content>
+</ion-view>
