@@ -30,6 +30,9 @@
         },
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "YourDream"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "TravelApp"
         }
     },
     "dependent_plugins": {
