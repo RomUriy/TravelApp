@@ -1,10 +1,7 @@
-
 .weather {
-	margin-left: auto;
-	margin-right: auto;
-	display: block
+	background-image: url("../img/weather.jpeg");
+	background-size: 150%;
 }
-
 .deleteItem {
 	z-index: 10;
 	color: rgb(209, 35, 35);

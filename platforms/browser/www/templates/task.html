@@ -1,0 +1,54 @@
+<div class="modal">
+
+  <ion-header-bar class="bar-secondary">
+    <h1 class="title" ng-show="currentTaskId == -1">New Dream</h1>
+    <h1 class="title" ng-show="currentTaskId > -1">Edit Dream</h1>
+    <button class="button button-clear button-positive" ng-click="closeTask()">Back</button>
+  </ion-header-bar>
+
+  <ion-content>
+    <form ng-submit="submitTask(activeTask)">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="What is your plan?" ng-model="activeTask.title" />
+        </label>
+
+        <label class="item item-input">
+          <input type="text" placeholder="Why not?" ng-model="activeTask.amount" />
+        </label>
+
+        <label class="item item-input">
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+            <input type="datetime-local" name="Time" placeholder="Time" ng-model="activeTask.time">
+          </ion-datetime>
+        </label>
+
+        <label class="item item-input">
+          <textarea placeholder="Description" ng-model="activeTask.description"></textarea>
+        </label>
+
+        <label class="item item-input"><center>
+          <input type="file" name="photo" multiple accept="image/*,image/jpeg" ng-model="activeTask.file" /></center>
+        </label>
+
+        <ul class="list">
+          <li class="item item-toggle">
+            <span class="toggle-item">Done</span>
+            <label class="toggle toggle-positive">
+              <input type="checkbox" ng-model="activeTask.done" />
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive" ng-show="currentTaskId == -1">Add new</button>
+          <button type="submit" class="button button-block button-positive" ng-show="currentTaskId > -1">Save</button>
+        </div>
+      </div>
+    </form>
+
+  </ion-content>
+
+</div>

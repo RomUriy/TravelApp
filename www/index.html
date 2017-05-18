@@ -6,14 +6,9 @@
   <title></title>
 
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-  <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
   <link href="css/style.css" rel="stylesheet">
-  <link href="css/camera.css" rel="stylesheet">
   <link href="css/map.css" rel="stylesheet">
-  <link href="css/weather.css" rel="stylesheet">
-
-
-
+  <link href="css/camera.css" rel="stylesheet">
 
 
   <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -22,19 +17,18 @@
 
 <!-- ionic/angularjs js -->
 <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic/js/angular/angular-resource.js"></script>
 
 <!-- cordova script (this will be a 404 during development) -->
 <script src="cordova.js"></script>
 
 <!-- your app's js -->
 <script src="js/app.js"></script>
-<script src="js/camera.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
+<script src="js/camera.js"></script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpV4NjVbB5KX4pCdWrFgphqBeOFKTbAJM&callback=initMap"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
-
-
 
 
 </head>
@@ -42,26 +36,32 @@
 
   <ion-nav-view></ion-nav-view>
 
+
   <ion-pane>
 
-
     <ion-tabs class="tabs-icon-top">
-      <ion-tab title="Home" icon="ion-home" href="#/home">
+      <!-- home Tab -->
+      <ion-tab title="Home" icon="icon ion-home" href="#/home">
         <ion-nav-view name="tab-home"></ion-nav-view>
       </ion-tab>
+
       <ion-tab title="Map" icon="ion-map" href="#/map">
         <ion-nav-view name="tab-map"></ion-nav-view>
       </ion-tab>
-      <ion-tab title="Weather" icon="ion-cloud" href="#/weather">
+
+      <!-- Weather Tab -->
+      <ion-tab title="Weather" icon="icon ion-cloud" href="#/weather">
         <ion-nav-view name="tab-weather"></ion-nav-view>
       </ion-tab>
+
       <ion-tab title="Camera" icon="ion-camera" href="#/camera">
         <ion-nav-view name="tab-camera"></ion-nav-view>
       </ion-tab>
+
     </ion-tabs>
-
-
   </ion-pane>
+
+
 
 
 </body>

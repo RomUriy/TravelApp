@@ -1,81 +1,28 @@
-var todo = angular.module('ToDo.controllers', ['ionic'])
+angular.module('ToDo.controllers', ['ionic'])
 
 
-todo.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
-  var myLatLng;
-  function initialize() {
+.constant('FORECASTIO_KEY', '0d5c4b57462add1f12907511d2e9b510')
+.controller('WeatherCtrl', function($scope,$state,Weather,DataStore) {
+  //read default settings into scope
+  console.log('inside weather');
+  $scope.city  = DataStore.city;
+  var latitude  = DataStore.latitude;
+  var longitude = DataStore.longitude;
 
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-      myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-
-      var mapOptions = {
-        center: myLatLng,
-        zoom: 10,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-      var map = new google.maps.Map(document.getElementById("map"),
-      mapOptions);
-
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Your Pos'
-      });
-
-      $scope.map = map;
-    });
-  }
-
-  ionic.Platform.ready(initialize)
-});
-
-todo.controller('WeatherCtrl', function($scope, $ionicLoading, $compile) {
-
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      loadWeather(position.coords.latitude + ',' + position.coords.longitude);
-    });
-  } else {
-    loadWeather("Kolkata, IN", "");
-  }
-
-  $(document).ready(function() {
-    setInterval(getWeather, 10000);
+  //call getCurrentWeather method in factory ‘Weather’
+  Weather.getCurrentWeather(latitude,longitude).then(function(resp) {
+    $scope.current = resp.data;
+    console.log('GOT CURRENT', $scope.current);
+    //debugger;
+  }, function(error) {
+    alert('Unable to get current conditions');
+    console.error(error);
   });
-
-  function loadWeather(location, woeid) {
-    $.simpleWeather({
-      location: location,
-      woeid: woeid,
-      unit: 'c',
-      success: function(weather) {
-        city = weather.city;
-        temp = weather.temp+'&deg';
-        wcode = '<img class="weathericon" src="./img/weathericons/' + weather.code
-        + '.svg">';
-        wind = '<p>' + weather.wind.speed + '</p><p>' + weather.units.speed +
-        '</p>';
-        humidity = weather.humidity + ' %';
-
-        $(".location").text(city);
-        $(".temperature").html(temp);
-        $(".climate_bg").html(wcode);
-        $(".windspeed").html(wind);
-        $(".humidity").text(humidity);
-      },
-
-      error: function(error) {
-        $(".error").html('<p>' + error + '</p>');
-      }
-    });
-  }
-});
+})
 
 
 
-app.controller('ToDoCtrl', function( $scope, $ionicModal, $timeout ){
+.controller('HomeCtrl', function( $scope, $ionicModal, $timeout ){
 
   if ( ! angular.isUndefined( window.localStorage['tasks'] ) ){
     $scope.tasks = JSON.parse( window.localStorage['tasks'] );
@@ -90,7 +37,7 @@ app.controller('ToDoCtrl', function( $scope, $ionicModal, $timeout ){
 
 
 
-  $ionicModal.fromTemplateUrl('views/Login.html', function(Login){
+  $ionicModal.fromTemplateUrl('templates/Login.html', function(Login){
     $scope.taskLogin = Login;
   },{
     scope: $scope,
@@ -115,7 +62,7 @@ app.controller('ToDoCtrl', function( $scope, $ionicModal, $timeout ){
 
 
 
-  $ionicModal.fromTemplateUrl('views/NewAccount.html', function(NewAccount){
+  $ionicModal.fromTemplateUrl('templates/NewAccount.html', function(NewAccount){
     $scope.taskNewAccount = NewAccount;
   },{
     scope: $scope,
@@ -142,7 +89,7 @@ app.controller('ToDoCtrl', function( $scope, $ionicModal, $timeout ){
 
 
 
-  $ionicModal.fromTemplateUrl('views/ForgotPassword.html', function(ForgotPassword){
+  $ionicModal.fromTemplateUrl('templates/ForgotPassword.html', function(ForgotPassword){
     $scope.taskForgotPassword = ForgotPassword;
   },{
     scope: $scope,
@@ -167,7 +114,7 @@ app.controller('ToDoCtrl', function( $scope, $ionicModal, $timeout ){
 
 
 
-  $ionicModal.fromTemplateUrl('views/task.html', function(modal){
+  $ionicModal.fromTemplateUrl('templates/task.html', function(modal){
     $scope.taskModal = modal;
   },{
     scope: $scope,
@@ -247,3 +194,35 @@ app.controller('ToDoCtrl', function( $scope, $ionicModal, $timeout ){
     window.localStorage['tasks'] = angular.toJson( $scope.tasks );
   }
 })
+
+
+
+.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
+  var myLatLng;
+  function initialize() {
+
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+
+      var mapOptions = {
+        center: myLatLng,
+        zoom: 10,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map"),
+      mapOptions);
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Your Pos'
+      });
+
+      $scope.map = map;
+    });
+  }
+
+  ionic.Platform.ready(initialize)
+});

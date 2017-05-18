@@ -1,0 +1,18 @@
+<ion-view title="Weather">
+  <!-- <img class="weather "src="img/back.jpeg" alt=""> -->
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Weather</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding weather">
+    <center>
+      <h2>Current Weather:</h2>
+      <h3>{{current.currently.summary}}</h3>
+      <h2>Temperature:</h2>
+      <h3>{{current.currently.temperature}}°C</h3>
+      <h2>Coming Days:</h2>
+      <h3>{{current.daily.summary}}</h3>
+    </center>
+
+  </ion-content>
+</ion-view>
