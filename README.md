@@ -4,13 +4,16 @@ Plan your trip and see the world! Use this app!
 ## Getting Started
 You can use this app by PhoneGapBuild. This app is available on Android.
 
+## Project Wiki
+If you wish to read more detail information of functions of this app, you can visit our [wiki](https://github.com/RomUriy/TravelApp/wiki)
+
 ## Application Functions:
 1. Create your account;
 2. Adding new events (dreams):
 * destination;
 * date;
-* description
-* tick as done
+* description;
+* tick as done;
 3. Amend your trip, delete or tick as done;
 4. Map with your geolocation;
 5. Local weather of geolocation;
