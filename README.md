@@ -1,4 +1,4 @@
-﻿# Travel App
+# Travel App
 Plan your trip and see the world! Use this app!
 
 ## Getting Started
