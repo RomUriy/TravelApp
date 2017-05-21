@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="TravelApp" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+     <splash src="img/logo.png" />
     <name>TravelApp</name>
     <description>TravelApp</description>
     <author email="romuriy@gmail.com" href="http://cemoe.com">
