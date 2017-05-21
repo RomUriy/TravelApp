@@ -35,81 +35,10 @@ angular.module('ToDo.controllers', ['ionic'])
     ];
   }
 
-
-
-  $ionicModal.fromTemplateUrl('templates/Login.html', function(Login){
-    $scope.taskLogin = Login;
-  },{
-    scope: $scope,
-    animation: 'slide-in-left'
-  });
-
-  $scope.currentTaskId = -1;
-
-  $scope.Login = function() {
-    $scope.activeTask = {
-      login: '',
-      password: ''
-    }
-    $scope.taskLogin.show();
-    $scope.currentTaskId = -1;
+  function logOut() {
+    window.location.href='index.html';
   }
-
-  $scope.closeLogin = function() {
-    $scope.taskLogin.hide();
-  }
-
-
-
-
-  $ionicModal.fromTemplateUrl('templates/NewAccount.html', function(NewAccount){
-    $scope.taskNewAccount = NewAccount;
-  },{
-    scope: $scope,
-    animation: 'slide-in-left'
-  });
-
-  $scope.currentTaskId = -1;
-
-  $scope.NewAccount = function() {
-    $scope.activeTask = {
-      name: '',
-      surname: '',
-      email: '',
-      password: ''
-    }
-    $scope.taskNewAccount.show();
-    $scope.currentTaskId = -1;
-  }
-
-  $scope.closeNewAccount = function() {
-    $scope.taskNewAccount.hide();
-  }
-
-
-
-
-  $ionicModal.fromTemplateUrl('templates/ForgotPassword.html', function(ForgotPassword){
-    $scope.taskForgotPassword = ForgotPassword;
-  },{
-    scope: $scope,
-    animation: 'slide-in-left'
-  });
-
-  $scope.currentTaskId = -1;
-
-  $scope.ForgotPassword = function() {
-    $scope.activeTask = {
-      email: ''
-    }
-    $scope.taskForgotPassword.show();
-    $scope.currentTaskId = -1;
-  }
-
-  $scope.closeForgotPassword = function() {
-    $scope.taskForgotPassword.hide();
-  }
-
+  document.getElementById('log_out').addEventListener('click', logOut, false);
 
 
 

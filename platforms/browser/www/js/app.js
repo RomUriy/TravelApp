@@ -47,15 +47,6 @@ angular.module('ToDo', ['ionic', 'ToDo.controllers', 'ToDo.services'])
     }
   })
 
-  .state('camera',{
-    url:'/camera',
-    views:{
-      'tab-camera':{
-        templateUrl:'templates/camera.html'
-      }
-    }
-  })
-
   .state('weather', {
     url: '/weather',
     views: {
