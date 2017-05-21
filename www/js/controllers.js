@@ -28,10 +28,9 @@ angular.module('ToDo.controllers', ['ionic'])
     $scope.tasks = JSON.parse( window.localStorage['tasks'] );
   } else {
     $scope.tasks = [
-      { title: 'Купить чайник', description: 'Нужно обязательно купить синий', done: false },
-      { title: 'Выучить ангулар',	description: 'Есть еще парочка книг, которые стоит прочесть', done: true },
-      { title: 'Сходить в кино', description: 'Говорят последний фильм про ночных снайперов очень хорошо', done: false },
-      { title: 'Слетать в Амстердам', description: 'В это время года Амстердам особенно хорош', done: false }
+      { title: 'Go to Paris', description: 'I want to visit the Eiffel Tower', done: false },
+      { title: 'Visit the Buckingham Palace', description: 'It is my dream', done: true },
+      { title: 'Visit Rome', description: 'I want to see the Colosseum', done: false }
     ];
   }
 
