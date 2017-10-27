@@ -3,6 +3,8 @@ Plan your trip and see the world! Use this app!
 
 ## Getting Started
 You can use this app by PhoneGapBuild. This app is available on Android.
+You can download this app.
+[Download](https://build.phonegap.com/apps/2575960/download/android)
 
 ## Project Wiki
 If you wish to read more detail information of functions of this app, you can visit our [wiki](https://github.com/RomUriy/TravelApp/wiki)
